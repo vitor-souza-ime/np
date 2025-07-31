@@ -12,20 +12,26 @@ from nltk.corpus import stopwords
 def extrair_texto_da_url(url):
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Erro se status != 200
+        response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         textos = soup.stripped_strings
-        return ' '.join(textos)
+        texto_completo = ' '.join(textos)
+        print(f"Texto extraído: {len(texto_completo.split())} palavras totais")
+        return texto_completo
     except Exception as e:
         print(f"Erro ao acessar a URL: {e}")
         return ""
 
 def limpar_texto(texto):
-    texto = texto.lower()  # lowercase
-    texto = texto.translate(str.maketrans('', '', string.punctuation))  # remove pontuação
+    texto = texto.lower()
+    texto = texto.translate(str.maketrans('', '', string.punctuation))
     palavras = texto.split()
     stop_words = set(stopwords.words('portuguese') + stopwords.words('english'))
     palavras_filtradas = [palavra for palavra in palavras if palavra not in stop_words and len(palavra) > 2]
+    
+    print(f"Palavras após limpeza: {len(palavras_filtradas)} palavras")
+    print(f"Palavras únicas: {len(set(palavras_filtradas))} palavras distintas")
+    
     return ' '.join(palavras_filtradas)
 
 def gerar_nuvem_de_palavras(texto_limpo):
