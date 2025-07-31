@@ -62,6 +62,3 @@ A saída é uma janela gráfica contendo a **nuvem de palavras** representando o
 
 Este projeto está licenciado sob a licença MIT.
 
-
-Se quiser, também posso gerar o `requirements.txt` com as bibliotecas e versões recomendadas. Deseja isso?
-```
