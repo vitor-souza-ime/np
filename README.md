@@ -28,22 +28,17 @@ Repositório oficial: [https://github.com/vitor-souza-ime/rp](https://github.com
 ## ▶️ Como executar
 
 1. Clone este repositório:
-   ```bash
+   
    git clone https://github.com/vitor-souza-ime/rp
    cd rp
-````
 
-2. Instale as dependências:
+3. Instale as dependências:
 
-   ```bash
    pip install -r requirements.txt
-   ```
 
-3. Execute o script:
+4. Execute o script:
 
-   ```bash
    python main.py
-   ```
 
 O script por padrão acessa a página:
 [https://pt.wikipedia.org/wiki/Intelig%C3%AAncia\_artificial](https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_artificial)
